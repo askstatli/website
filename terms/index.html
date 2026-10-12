@@ -320,7 +320,7 @@
 /* The booking form says it's sending the moment it's pressed, and can't be
    sent twice. Restored if the visitor comes Back to the page. */
 document.querySelectorAll('form.book').forEach(function (f) {
-  if (f.id === 'preview-form') return;        // the single-file preview has no server
+  if (f.id === 'preview-form' || f.id === 'waitlist-form') return;   // these handle their own button
   f.addEventListener('submit', function () {
     var b = f.querySelector('[type=submit]');
     if (!b) return;
