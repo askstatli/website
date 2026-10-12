@@ -1632,8 +1632,12 @@ h3, h4 { letter-spacing: -0.005em; }
   .rv-armed .plans[data-reveal] .plan.is-in.is-featured { transition-delay: 240ms; }
 }
 
-/* With the Cal.com calendar in place, the booking text sits above it and the
-   calendar takes the full width. Squeezed into half a column (~570px), Cal
-   falls back to its stacked phone layout and runs 3,000px+ tall. */
+/* With the Cal.com calendar in place: text on the left, calendar on the right.
+   Cal only uses its compact layout at ~768px wide or more; narrower, it stacks
+   into its phone layout and runs ~2,800px tall. So the calendar gets a fixed
+   780px column, and on screens too narrow to fit that beside the text the
+   calendar drops below it at full width. */
 .book-grid:has(.cal-block) { grid-template-columns: 1fr; gap: 2rem; }
-.book-grid:has(.cal-block) .book-aside { max-width: 62ch; }
+@media (min-width: 1200px) {
+  .book-grid:has(.cal-block) { grid-template-columns: minmax(0, 1fr) 780px; gap: 2.4rem; }
+}

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Nunito:wght@700&family=Sora:wght@500;600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/static/css/site.css?v=42914f87">
+<link rel="stylesheet" href="/static/css/site.css?v=52d756d7">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -781,13 +781,12 @@
         
         <p class="lede">
           A quick look at the working dashboard and a few questions about your practice.
-          Tell me the number you least trust and we'll start there.
+          Tell me the number you most want to get a handle on and we'll start there.
         </p>
         <ul>
-          <li>A working dashboard on screen, not slides</li>
-          <li>Straight answers on what it can't do yet</li>
+          <li>A working dashboard on screen</li>
+          <li>Whether it works with your practice software</li>
           <li>A price for your practice before the call ends</li>
-          <li>No follow-up sequence, no pressure</li>
         </ul>
         <p class="form-note" style="margin-top:1.4rem">
           Setup is hands-on and I do it myself, so I take on a small number of new clinics
@@ -942,9 +941,9 @@
   </div>
 
   <div class="f">
-    <label for="msg-home">What number in your practice do you least trust right now?</label>
+    <label for="msg-home">Which number in your practice do you most want to get a handle on?</label>
     <textarea id="msg-home" name="message"
-              placeholder="e.g. we have no idea how many care-plan patients quietly stopped coming last quarter"></textarea>
+              placeholder="e.g. new patients, care plan conversions, patients dropping off"></textarea>
   </div>
 
   <button class="btn btn-primary btn-lg" type="submit">Request my discovery call</button>
@@ -992,12 +991,13 @@ Cal("inline", {
   config: { layout: "month_view" }
 });
 
-// Match the site rather than Cal's defaults. The theme follows the viewer's
-// system setting, the same way the rest of the page does.
+// Match the site rather than Cal's defaults. Always light, like the site
+// (it no longer follows the viewer's dark-mode setting).
 Cal("ui", {
-  hideEventTypeDetails: false,
+  // The event title and description are already beside the calendar on the page.
+  hideEventTypeDetails: true,
   layout: "month_view",
-  theme: "auto",
+  theme: "light",
   cssVarsPerTheme: {
     light: { "cal-brand": "#0e6e5b" },
     dark:  { "cal-brand": "#4fbf9f" }
@@ -1389,7 +1389,7 @@ window.addEventListener('pageshow', function () {
         name: get('name'), clinic: get('clinic'), email: get('email'),
         phone: get('phone') || '-', chiropractors: get('chiros'), locations: get('locations'),
         software: get('software'), preferred_times: get('times'),
-        least_trusted_number: get('message') || '(not answered)'
+        number_to_get_a_handle_on: get('message') || '(not answered)'
       }) })
       .then(function (r) { if (!r.ok) throw new Error(r.status); })
       .then(function () {
