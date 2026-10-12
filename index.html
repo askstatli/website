@@ -795,7 +795,11 @@
       <div>
         
           
-<form class="book" id="waitlist-form">
+<form class="book" id="waitlist-form" data-endpoint="https://formsubmit.co/ajax/hello@askstatli.com">
+  
+  <div style="position:absolute;left:-9999px" aria-hidden="true">
+    <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+  </div>
   <div class="f-row">
     <div class="f">
       <label for="wl-name">Your name <span class="req">*</span></label>
@@ -856,18 +860,48 @@
   </div>
 
   <button class="btn btn-primary btn-lg" type="submit">Join the waitlist</button>
-  <p class="form-note">Opens an email to hello@askstatli.com with your details filled in. Just press send.</p>
+  
 </form>
+<div class="flash" id="waitlist-done" hidden>
+  <strong>You're on the list.</strong> Thanks — I'll be in touch to book your discovery call
+  as soon as a spot opens. Questions in the meantime: <a href="mailto:hello@askstatli.com">hello@askstatli.com</a>
+</div>
 
 <script>
 (function () {
   var f = document.getElementById('waitlist-form');
   if (!f) return;
+  var endpoint = f.getAttribute('data-endpoint');
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     var d = new FormData(f), get = function (k) { return (d.get(k) || '').toString().trim(); };
     if (!get('name') || !get('clinic') || !get('email')) {
       alert('Please add your name, clinic and email.');
+      return;
+    }
+    if (get('website')) return;   // honeypot filled: a bot
+    if (endpoint) {
+      var btn = f.querySelector('button[type=submit]');
+      btn.disabled = true; btn.textContent = 'Adding you…';
+      // FormSubmit forwards the signup to hello@ as an email.
+      var payload = {
+        _subject: 'Statli waitlist: ' + get('clinic'),
+        _template: 'table', _captcha: 'false', _replyto: get('email'),
+        name: get('name'), clinic: get('clinic'), email: get('email'),
+        chiropractors: get('chiros'), software: get('software')
+      };
+      fetch(endpoint, { method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                        body: JSON.stringify(payload) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); })
+        .then(function () {
+          f.hidden = true;
+          document.getElementById('waitlist-done').hidden = false;
+        })
+        .catch(function () {
+          btn.disabled = false; btn.textContent = 'Join the waitlist';
+          alert('That didn\'t send - please check your connection, or email hello@askstatli.com.');
+        });
       return;
     }
     var body = [
