@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Nunito:wght@700&family=Sora:wght@500;600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/static/css/site.css">
+<link rel="stylesheet" href="/static/css/site.css?v=42914f87">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -26,7 +26,7 @@
       <a href="/#security">Your data</a>
       <a href="/#faq">FAQ</a>
     </div>
-    <a class="btn btn-primary nav-cta" href="/#book"><span>Join<span class="cta-long"> the</span> waitlist</span></a>
+    <a class="btn btn-primary nav-cta" href="/#book"><span>Book a<span class="cta-long"> discovery</span> call</span></a>
     
     <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="navSheet" aria-label="Menu">
       <span class="nav-menu-icon" aria-hidden="true"><i></i><i></i></span>
@@ -52,7 +52,7 @@
        visibility into your practice with customised insights built around your patient
        journey, care plan model and KPIs.</p>
     <div class="cta-row">
-      <a class="btn btn-primary btn-lg" href="#book">Join the waitlist</a>
+      <a class="btn btn-primary btn-lg" href="/#book">Book a discovery call</a>
       <a class="btn btn-ghost btn-lg" href="#story">See it in action</a>
     </div>
   </div>
@@ -310,7 +310,7 @@
            So that's where his training goes: the new patient consultation and report of findings,
            so patients leave engaged and committed, not just booked. You see it as the owner, he
            sees it as the chiropractor, and next month the same chart shows whether it worked.</p>
-        <a class="btn btn-primary btn-lg" href="#book">Join the waitlist</a>
+        <a class="btn btn-primary btn-lg" href="/#book">Book a discovery call</a>
       </div>
     </div>
   </div>
@@ -628,7 +628,7 @@
         <p class="plan-bill" data-monthly="billed monthly" data-annual="billed $990 a year ex GST">billed $990 a year ex GST</p>
         <p class="plan-setup">plus $399 one-off setup ex GST</p>
         
-        <a class="btn btn-ghost" href="#book">Join the waitlist</a>
+        <a class="btn btn-ghost" href="/#book">Book a discovery call</a>
       </div>
       
       <div class="plan is-featured">
@@ -640,7 +640,7 @@
         <p class="plan-bill" data-monthly="billed monthly" data-annual="billed $1,490 a year ex GST">billed $1,490 a year ex GST</p>
         <p class="plan-setup">plus $499 one-off setup ex GST</p>
         
-        <a class="btn btn-primary" href="#book">Join the waitlist</a>
+        <a class="btn btn-primary" href="/#book">Book a discovery call</a>
       </div>
       
       <div class="plan">
@@ -651,7 +651,7 @@
         <p class="plan-price"><span class="money">Let's talk</span></p>
         <p class="plan-setup">Priced on the call, for multi-site and larger teams</p>
         
-        <a class="btn btn-ghost" href="#book">Join the waitlist</a>
+        <a class="btn btn-ghost" href="/#book">Book a discovery call</a>
       </div>
       
     </div>
@@ -769,8 +769,8 @@
   <div class="wrap">
     <div class="head">
       
-      <p class="label">Waitlist</p>
-      <h2><span class="hl">Be first</span> in line.</h2>
+      <p class="label">Discovery call</p>
+      <h2><span class="hl">Ten minutes</span> to see if it fits.</h2>
       
     </div>
 
@@ -780,40 +780,71 @@
       <div class="book-aside">
         
         <p class="lede">
-          Statli is opening to a small number of clinics first. Join the waitlist and I'll be
-          in touch to book a 10-minute discovery call as soon as a spot opens.
+          A quick look at the working dashboard and a few questions about your practice.
+          Tell me the number you least trust and we'll start there.
         </p>
         <ul>
           <li>A working dashboard on screen, not slides</li>
           <li>Straight answers on what it can't do yet</li>
-          <li>A price for your practice on the call</li>
+          <li>A price for your practice before the call ends</li>
           <li>No follow-up sequence, no pressure</li>
         </ul>
+        <p class="form-note" style="margin-top:1.4rem">
+          Setup is hands-on and I do it myself, so I take on a small number of new clinics
+          each month. If the next slot is a few weeks out, I'll tell you on the call.
+        </p>
         
       </div>
 
       <div>
         
           
-<form class="book" id="waitlist-form" data-endpoint="https://formsubmit.co/ajax/hello@askstatli.com">
+
+<div class="cal-block">
+  <div id="cal-inline" class="cal-inline" data-cal-link="statli/discovery-call">
+    <div class="cal-loading">
+      <p class="label">Loading the calendar…</p>
+      <p>If it doesn't appear in a few seconds, use the form below. It reaches me either way.</p>
+    </div>
+  </div>
+
+  <details class="cal-fallback">
+    <summary>None of these times work, or the calendar won't load?</summary>
+    <p class="form-note" style="margin:.9rem 0 1.2rem">
+      Send it through here instead and I'll come back with times that suit you.
+    </p>
+    
+<form class="book">
+  <input type="hidden" name="source" value="home">
   
   <div style="position:absolute;left:-9999px" aria-hidden="true">
     <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
   </div>
+
   <div class="f-row">
     <div class="f">
-      <label for="wl-name">Your name <span class="req">*</span></label>
-      <input id="wl-name" type="text" name="name" required autocomplete="name">
+      <label for="name-home">Your name <span class="req">*</span></label>
+      <input id="name-home" type="text" name="name" required autocomplete="name"
+             value="">
     </div>
     <div class="f">
-      <label for="wl-clinic">Clinic name <span class="req">*</span></label>
-      <input id="wl-clinic" type="text" name="clinic" required autocomplete="organization">
+      <label for="clinic-home">Clinic name <span class="req">*</span></label>
+      <input id="clinic-home" type="text" name="clinic" required autocomplete="organization"
+             value="">
     </div>
   </div>
 
-  <div class="f">
-    <label for="wl-email">Email <span class="req">*</span></label>
-    <input id="wl-email" type="email" name="email" required autocomplete="email">
+  <div class="f-row">
+    <div class="f">
+      <label for="email-home">Email <span class="req">*</span></label>
+      <input id="email-home" type="email" name="email" required autocomplete="email"
+             value="">
+    </div>
+    <div class="f">
+      <label for="phone-home">Phone</label>
+      <input id="phone-home" type="tel" name="phone" autocomplete="tel"
+             value="">
+    </div>
   </div>
 
   <div class="f">
@@ -821,17 +852,20 @@
     <div class="choices">
       
       <label>
-        <input type="radio" name="chiros" value="1" checked>
+        <input type="radio" name="chiros" value="1"
+               checked>
         <span>1</span>
       </label>
       
       <label>
-        <input type="radio" name="chiros" value="2–4" >
+        <input type="radio" name="chiros" value="2–4"
+               >
         <span>2–4</span>
       </label>
       
       <label>
-        <input type="radio" name="chiros" value="5+" >
+        <input type="radio" name="chiros" value="5+"
+               >
         <span>5+</span>
       </label>
       
@@ -839,82 +873,147 @@
   </div>
 
   <div class="f">
-    <label for="wl-software">Practice software</label>
-    <select id="wl-software" name="software">
+    <label>How many locations?</label>
+    <div class="choices">
       
-      <option value="Cliniko">Cliniko</option>
+      <label>
+        <input type="radio" name="locations" value="1"
+               checked>
+        <span>1</span>
+      </label>
       
-      <option value="Nookal">Nookal</option>
+      <label>
+        <input type="radio" name="locations" value="2"
+               >
+        <span>2</span>
+      </label>
       
-      <option value="Halaxy">Halaxy</option>
+      <label>
+        <input type="radio" name="locations" value="3"
+               >
+        <span>3</span>
+      </label>
       
-      <option value="Practice Hub">Practice Hub</option>
+      <label>
+        <input type="radio" name="locations" value="4+"
+               >
+        <span>4+</span>
+      </label>
       
-      <option value="Front Desk">Front Desk</option>
+    </div>
+  </div>
+
+  <div class="f">
+    <label for="software-home">Practice software</label>
+    <select id="software-home" name="software">
       
-      <option value="Chiro8000 / other">Chiro8000 / other</option>
+      <option value="Cliniko" >Cliniko</option>
       
-      <option value="Not sure">Not sure</option>
+      <option value="Nookal" >Nookal</option>
+      
+      <option value="Halaxy" >Halaxy</option>
+      
+      <option value="Practice Hub" >Practice Hub</option>
+      
+      <option value="Front Desk" >Front Desk</option>
+      
+      <option value="Chiro8000 / other" >Chiro8000 / other</option>
+      
+      <option value="Not sure" >Not sure</option>
       
     </select>
   </div>
 
-  <button class="btn btn-primary btn-lg" type="submit">Join the waitlist</button>
-  
+  <div class="f">
+    <label for="times-home">When suits for a 10-minute call?</label>
+    <select id="times-home" name="times">
+      
+      <option value="Weekday mornings" >Weekday mornings</option>
+      
+      <option value="Weekday lunchtime" >Weekday lunchtime</option>
+      
+      <option value="Weekday afternoons" >Weekday afternoons</option>
+      
+      <option value="After 5pm" >After 5pm</option>
+      
+      <option value="Flexible" >Flexible</option>
+      
+    </select>
+  </div>
+
+  <div class="f">
+    <label for="msg-home">What number in your practice do you least trust right now?</label>
+    <textarea id="msg-home" name="message"
+              placeholder="e.g. we have no idea how many care-plan patients quietly stopped coming last quarter"></textarea>
+  </div>
+
+  <button class="btn btn-primary btn-lg" type="submit">Request my discovery call</button>
+  <p class="form-note">
+    I'll reply within one business day with a time. The call is a screen-share of the
+    real dashboard against your questions, not a slide deck.
+  </p>
 </form>
-<div class="flash" id="waitlist-done" hidden>
-  <strong>You're on the list.</strong> Thanks — I'll be in touch to book your discovery call
-  as soon as a spot opens. Questions in the meantime: <a href="mailto:hello@askstatli.com">hello@askstatli.com</a>
+  </details>
 </div>
 
 <script>
-(function () {
-  var f = document.getElementById('waitlist-form');
-  if (!f) return;
-  var endpoint = f.getAttribute('data-endpoint');
-  f.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var d = new FormData(f), get = function (k) { return (d.get(k) || '').toString().trim(); };
-    if (!get('name') || !get('clinic') || !get('email')) {
-      alert('Please add your name, clinic and email.');
+
+(function (C, A, L) {
+  let p = function (a, ar) { a.q.push(ar); };
+  let d = C.document;
+  C.Cal = C.Cal || function () {
+    let cal = C.Cal; let ar = arguments;
+    if (!cal.loaded) {
+      cal.ns = {}; cal.q = cal.q || [];
+      d.head.appendChild(d.createElement("script")).src = A;
+      cal.loaded = true;
+    }
+    if (ar[0] === L) {
+      const api = function () { p(api, arguments); };
+      const namespace = ar[1];
+      api.q = api.q || [];
+      if (typeof namespace === "string") {
+        cal.ns[namespace] = cal.ns[namespace] || api;
+        p(cal.ns[namespace], ar);
+        p(cal, ["initNamespace", namespace]);
+      } else { p(cal, ar); }
       return;
     }
-    if (get('website')) return;   // honeypot filled: a bot
-    if (endpoint) {
-      var btn = f.querySelector('button[type=submit]');
-      btn.disabled = true; btn.textContent = 'Adding you…';
-      // FormSubmit forwards the signup to hello@ as an email.
-      var payload = {
-        _subject: 'Statli waitlist: ' + get('clinic'),
-        _template: 'table', _captcha: 'false', _replyto: get('email'),
-        name: get('name'), clinic: get('clinic'), email: get('email'),
-        chiropractors: get('chiros'), software: get('software')
-      };
-      fetch(endpoint, { method: 'POST',
-                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                        body: JSON.stringify(payload) })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); })
-        .then(function () {
-          // style, not the hidden attribute: form.book's display:grid overrides [hidden]
-          f.style.display = 'none';
-          var done = document.getElementById('waitlist-done');
-          done.hidden = false; done.style.display = 'block';
-        })
-        .catch(function () {
-          btn.disabled = false; btn.textContent = 'Join the waitlist';
-          alert('That didn\'t send - please check your connection, or email hello@askstatli.com.');
-        });
-      return;
-    }
-    var body = [
-      'Please add me to the Statli waitlist.', '',
-      'Name: ' + get('name'), 'Clinic: ' + get('clinic'), 'Email: ' + get('email'),
-      'Chiropractors: ' + get('chiros'), 'Software: ' + get('software')
-    ].join('\n');
-    window.location.href = 'mailto:hello@askstatli.com?subject=' +
-      encodeURIComponent('Waitlist - ' + get('clinic')) + '&body=' + encodeURIComponent(body);
-  });
-})();
+    p(cal, ar);
+  };
+})(window, "https://app.cal.com/embed/embed.js", "init");
+
+
+Cal("init", { origin: "https://cal.com" });
+
+Cal("inline", {
+  elementOrSelector: "#cal-inline",
+  calLink: "statli/discovery-call",
+  config: { layout: "month_view" }
+});
+
+// Match the site rather than Cal's defaults. The theme follows the viewer's
+// system setting, the same way the rest of the page does.
+Cal("ui", {
+  hideEventTypeDetails: false,
+  layout: "month_view",
+  theme: "auto",
+  cssVarsPerTheme: {
+    light: { "cal-brand": "#0e6e5b" },
+    dark:  { "cal-brand": "#4fbf9f" }
+  }
+});
+
+// If the embed never renders — offline, blocked, a typo'd link — open the
+// fallback form rather than leaving an empty box on the page.
+setTimeout(function () {
+  var el = document.getElementById('cal-inline');
+  if (el && !el.querySelector('iframe')) {
+    el.classList.add('cal-failed');
+    var fb = document.querySelector('.cal-fallback');
+    if (fb) fb.open = true;
+  }
+}, 6000);
 </script>
         
       </div>
@@ -1208,7 +1307,7 @@ var whenMostlyShown = (function () {
 <footer class="foot">
   <div class="wrap foot-in">
     <span>Statli: built and run by Josiah, owner of two chiropractic clinics.</span>
-    <span><a class="foot-cta" href="/#book">Join the waitlist</a></span>
+    <span><a class="foot-cta" href="/#book">Book a discovery call</a></span>
     <span><a href="mailto:hello@askstatli.com">hello@askstatli.com</a></span>
     <span>All prices AUD, excluding GST.</span>
     <span><a href="/terms">Terms</a> · <a href="/privacy">Privacy</a></span>
@@ -1263,6 +1362,50 @@ window.addEventListener('pageshow', function () {
     if (b.dataset.label) { b.disabled = false; b.classList.remove('is-sending'); b.textContent = b.dataset.label; }
   });
 });
+</script>
+
+<script>
+// Static site: the fallback booking form is emailed to Statli via FormSubmit
+// (no server), and the visitor stays on the page.
+(function () {
+  var f = document.querySelector('form.book:not(#waitlist-form)');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = new FormData(f), get = function (k) { return (d.get(k) || '').toString().trim(); };
+    var btn = f.querySelector('[type=submit]');
+    var reset = function () { btn.disabled = false; btn.classList.remove('is-sending'); btn.textContent = btn.dataset.label || 'Send'; };
+    if (!get('name') || !get('clinic') || !get('email')) {
+      setTimeout(reset, 0);
+      alert('Please add your name, clinic and email so I can get back to you.');
+      return;
+    }
+    if (get('website')) return;   // honeypot: a bot
+    fetch('https://formsubmit.co/ajax/hello@askstatli.com', { method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Discovery call request: ' + get('clinic'), _template: 'table',
+        _captcha: 'false', _replyto: get('email'),
+        name: get('name'), clinic: get('clinic'), email: get('email'),
+        phone: get('phone') || '-', chiropractors: get('chiros'), locations: get('locations'),
+        software: get('software'), preferred_times: get('times'),
+        least_trusted_number: get('message') || '(not answered)'
+      }) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); })
+      .then(function () {
+        f.style.display = 'none';
+        var ok = document.createElement('div');
+        ok.className = 'flash';
+        ok.innerHTML = '<strong>Thanks, that's come through.</strong> I'll be in touch with times that suit you. '
+                     + 'Anything else: <a href="mailto:hello@askstatli.com">hello@askstatli.com</a>';
+        f.parentNode.insertBefore(ok, f.nextSibling);
+      })
+      .catch(function () {
+        reset();
+        alert('That didn't send - please check your connection, or email hello@askstatli.com.');
+      });
+  });
+})();
 </script>
 </body>
 </html>

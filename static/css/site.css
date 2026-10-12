@@ -1631,3 +1631,9 @@ h3, h4 { letter-spacing: -0.005em; }
   .rv-armed .plans[data-reveal] .plan.is-in:nth-child(3) { transition-delay: 110ms; }
   .rv-armed .plans[data-reveal] .plan.is-in.is-featured { transition-delay: 240ms; }
 }
+
+/* With the Cal.com calendar in place, the booking text sits above it and the
+   calendar takes the full width. Squeezed into half a column (~570px), Cal
+   falls back to its stacked phone layout and runs 3,000px+ tall. */
+.book-grid:has(.cal-block) { grid-template-columns: 1fr; gap: 2rem; }
+.book-grid:has(.cal-block) .book-aside { max-width: 62ch; }
