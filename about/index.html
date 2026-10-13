@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>About Statli</title>
+<meta name="description" content="Statli is an Australian practice dashboard for chiropractic clinics, built by a clinic owner and run by Statli Pty Ltd.">
+
+<link rel="canonical" href="https://askstatli.com/about/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Statli">
+<meta property="og:title" content="About Statli">
+<meta property="og:description" content="Statli is an Australian practice dashboard for chiropractic clinics, built by a clinic owner and run by Statli Pty Ltd.">
+<meta property="og:url" content="https://askstatli.com/about/">
+<meta property="og:image" content="https://askstatli.com/static/img/demo_overview.jpg">
+<link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=Nunito:wght@700&family=Sora:wght@500;600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/static/css/site.css?v=52d756d7">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="/" aria-label="Statli, know your practice. Home">
+      <span class="brand-word">statli<span class="brand-dot">.</span></span>
+      <span class="brand-tag">Know your practice</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#what">What it does</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#security">Your data</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="/#book"><span>Book a<span class="cta-long"> discovery</span> call</span></a>
+    
+    <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="navSheet" aria-label="Menu">
+      <span class="nav-menu-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+  <div class="nav-sheet" id="navSheet" hidden>
+    <a href="/#what">What it does</a>
+    <a href="/#story">See it in action</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#security">Your data</a>
+    <a href="/#faq">FAQ</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<style>.about p{margin:0 0 1.1em;max-width:68ch}</style>
+<section class="section">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">About</p>
+      <h2>Built inside a <span class="hl">working practice</span>.</h2>
+    </div>
+
+    <div class="legal about">
+      <p class="legal-intro">Statli is a practice dashboard for chiropractic clinics. It is made and run by
+        Statli Pty Ltd, an Australian company.</p>
+
+      <p>It started as the reporting behind two chiropractic clinics. Their owner needed one place to see
+        new patients, report-of-findings attendance, care-plan conversion, early dropouts and patient visit
+        average, per practitioner and per clinic, without pulling numbers out of the booking system, the ad
+        accounts and a spreadsheet every week. Those clinics grew to a seven-figure practice in two years,
+        and the dashboard is now offered to other clinics.</p>
+
+      <p>Statli connects to Cliniko, Practice Hub, Nookal or Halaxy, alongside Google Ads and Meta Ads. Each
+        clinic's setup is configured to how that practice runs: its appointment types, its care-plan model
+        (or none) and the KPIs it already tracks. Setup takes about ten days and needs very little of the
+        clinic's time.</p>
+
+      <p>Pricing is per chiropractor, in Australian dollars, excluding GST.
+        Clinic data stays the clinic's own; see the <a href="/privacy">privacy policy</a>
+        and <a href="/terms">terms</a> for the detail.</p>
+
+      <p>To talk about whether it fits your clinic, email
+        <a href="mailto:hello@askstatli.com">hello@askstatli.com</a> or
+        <a href="/#book">book a ten-minute call</a>.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>Statli: built and run by Josiah, owner of two chiropractic clinics.</span>
+    <span><a class="foot-cta" href="/#book">Book a discovery call</a></span>
+    <span><a href="mailto:hello@askstatli.com">hello@askstatli.com</a></span>
+    <span>All prices AUD, excluding GST.</span>
+    <span><a href="/about">About</a> · <a href="/terms">Terms</a> · <a href="/privacy">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+/* The top bar: a soft shadow only once content is scrolling under it, and
+   on phones a menu that drops from the bar (and closes back into it). */
+(function () {
+  var nav = document.querySelector('.nav');
+  if (!nav) return;
+  function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 4); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  var btn = nav.querySelector('.nav-menu-btn'), sheet = document.getElementById('navSheet');
+  if (!btn || !sheet) return;
+  function set(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.classList.toggle('menu-open', open);
+    clearTimeout(sheet._t);
+    if (open) { sheet.hidden = false; void sheet.offsetWidth; sheet.classList.add('is-open'); }
+    else {
+      sheet.classList.remove('is-open');
+      // Backstop for when no transition runs (reduced motion, a background
+      // tab): a closed menu must never sit invisible over the page.
+      sheet._t = setTimeout(function () { if (!sheet.classList.contains('is-open')) sheet.hidden = true; }, 450);
+    }
+  }
+  // Hidden only once the closing transition has finished, so it can be
+  // reopened mid-close and simply turns round.
+  sheet.addEventListener('transitionend', function () { if (!sheet.classList.contains('is-open')) sheet.hidden = true; });
+  btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true'); });
+  sheet.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+  document.addEventListener('click', function (e) { if (!nav.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+})();
+
+/* The booking form says it's sending the moment it's pressed, and can't be
+   sent twice. Restored if the visitor comes Back to the page. */
+document.querySelectorAll('form.book').forEach(function (f) {
+  if (f.id === 'preview-form' || f.id === 'waitlist-form') return;   // these handle their own button
+  f.addEventListener('submit', function () {
+    var b = f.querySelector('[type=submit]');
+    if (!b) return;
+    b.dataset.label = b.dataset.label || b.textContent;
+    setTimeout(function () { b.disabled = true; b.classList.add('is-sending'); b.textContent = 'Sending…'; }, 0);
+  });
+});
+window.addEventListener('pageshow', function () {
+  document.querySelectorAll('form.book [type=submit]').forEach(function (b) {
+    if (b.dataset.label) { b.disabled = false; b.classList.remove('is-sending'); b.textContent = b.dataset.label; }
+  });
+});
+</script>
+</body>
+</html>
