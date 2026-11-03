@@ -986,11 +986,33 @@ form.book {
   letter-spacing: .02em; color: var(--ink-2); padding-left: .08em; white-space: nowrap;
 }
 
-/* ── Hero on the light green ─────────────────────────────────────────────────
-   The same light green tint the alternating sections use further down the
-   page, so the hero reads as part of that set. Text, buttons and the lime
-   highlighter all stay as they are: they were made for a light ground. */
-.hero-green { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+/* ── Hero: green fading to white ──────────────────────────────────────────────
+   The brand green at the top, fading gradually to white behind the devices
+   (chosen 2026-11-03). --fs is where the intro paragraph ends, set by a small
+   script in index.html so the fade lines up with the text at any width; the
+   420px default is close enough if the script doesn't run. The headline is
+   white, its payoff line in the lime the highlighter uses elsewhere (a
+   highlighter stroke reads muddy on dark green). The paragraph is dark: by its
+   last line the ground is light enough that white falls to ~2:1. */
+.hero-green {
+  --fs: 420px;
+  background: linear-gradient(180deg,
+    var(--accent) 0,
+    color-mix(in srgb, var(--accent) 92%, #fff) calc(var(--fs) * .3),
+    color-mix(in srgb, var(--accent) 78%, #fff) calc(var(--fs) * .65),
+    color-mix(in srgb, var(--accent) 58%, #fff) var(--fs),
+    color-mix(in srgb, var(--accent) 32%, #fff) calc(var(--fs) + 220px),
+    color-mix(in srgb, var(--accent) 12%, #fff) calc(var(--fs) + 420px),
+    #ffffff calc(var(--fs) + 600px));
+}
+.hero-green h1 { color: #fff; }
+.hero-green h1 .hl { background-image: none; color: var(--hl, #a8dc84); animation: none; }
+.hero-green .hero-sub { color: var(--ink); }
+.hero-green .btn-primary { background: #fff; color: var(--accent); }
+.hero-green .btn-ghost { background: #fff; border-color: #fff; color: var(--ink); }
+@media (hover: hover) {
+  .hero-green .btn-primary:hover, .hero-green .btn-ghost:hover { background: color-mix(in srgb, var(--accent) 10%, #fff); }
+}
 /* With the hero green, the sections below swap their alternation so the page
    still goes green, plain, green, plain instead of two greens in a row. */
 main:has(> .hero-green) > section:nth-of-type(even) { background: transparent; border-top-color: var(--rule); }
