@@ -1008,6 +1008,11 @@ form.book {
 .hero-green h1 { color: #fff; }
 .hero-green h1 .hl { background-image: none; color: var(--hl, #a8dc84); animation: none; }
 .hero-green .hero-sub { color: var(--ink); }
+/* The line under the buttons: who it's for. */
+.hero-for {
+  margin: 1.1rem auto 0; text-align: center;
+  font-size: .95rem; font-weight: 500; letter-spacing: .01em; color: var(--ink);
+}
 .hero-green .btn-primary { background: #fff; color: var(--accent); }
 .hero-green .btn-ghost { background: #fff; border-color: #fff; color: var(--ink); }
 @media (hover: hover) {
