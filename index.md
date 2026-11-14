@@ -34,7 +34,6 @@ Statli has no public API or self-serve signup. To start, the clinic owner books 
 - [Home](https://askstatli.com/): what Statli shows, pricing, data handling and FAQ
 - [About](https://askstatli.com/about/): who makes Statli and why
 - [Privacy policy](https://askstatli.com/privacy/)
-- [Terms](https://askstatli.com/terms/)
 - [Sitemap](https://askstatli.com/sitemap.xml)
 
 ## Contact
