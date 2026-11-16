@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Statli: practice dashboard for chiropractic clinics</title>
-<meta name="description" content="Practice intelligence for chiropractic clinics. Connects to Cliniko, Practice Hub, Nookal or Halaxy alongside Google Ads and Meta Ads, and shows you new patients, ROF attendance, care-plan conversion, dropouts and patient visit average, per practitioner, per clinic, every week. Configured to how your practice actually runs, including if you don't sell care plans.">
+<meta name="description" content="Practice intelligence for chiropractic clinics. Connects to Cliniko, Practice Hub, PracSuite, Nookal or Halaxy alongside Google Ads and Meta Ads, and shows you new patients, ROF attendance, care-plan conversion, dropouts and patient visit average, per practitioner, per clinic, every week. Configured to how your practice actually runs, including if you don't sell care plans.">
 
 <link rel="canonical" href="https://askstatli.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Statli">
 <meta property="og:title" content="Statli: practice dashboard for chiropractic clinics">
-<meta property="og:description" content="Practice intelligence for chiropractic clinics. Connects to Cliniko, Practice Hub, Nookal or Halaxy alongside Google Ads and Meta Ads, and shows you new patients, ROF attendance, care-plan conversion, dropouts and patient visit average, per practitioner, per clinic, every week. Configured to how your practice actually runs, including if you don't sell care plans.">
+<meta property="og:description" content="Practice intelligence for chiropractic clinics. Connects to Cliniko, Practice Hub, PracSuite, Nookal or Halaxy alongside Google Ads and Meta Ads, and shows you new patients, ROF attendance, care-plan conversion, dropouts and patient visit average, per practitioner, per clinic, every week. Configured to how your practice actually runs, including if you don't sell care plans.">
 <meta property="og:url" content="https://askstatli.com/">
 <meta property="og:image" content="https://askstatli.com/static/img/demo_overview.jpg">
 <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
@@ -25,7 +25,7 @@
   "address":{"@type":"PostalAddress","addressRegion":"QLD","addressCountry":"AU"}},
  {"@type":"SoftwareApplication","name":"Statli","url":"https://askstatli.com/","applicationCategory":"BusinessApplication",
   "operatingSystem":"Web","publisher":{"@id":"https://askstatli.com/#org"},
-  "description":"Practice intelligence dashboard for chiropractic clinics. Connects to Cliniko, Practice Hub, Nookal or Halaxy plus Google Ads and Meta Ads, and reports new patients, ROF attendance, care-plan conversion, dropouts and patient visit average per practitioner and clinic, every week.",
+  "description":"Practice intelligence dashboard for chiropractic clinics. Connects to Cliniko, Practice Hub, PracSuite, Nookal or Halaxy plus Google Ads and Meta Ads, and reports new patients, ROF attendance, care-plan conversion, dropouts and patient visit average per practitioner and clinic, every week.",
   "offers":{"@type":"AggregateOffer","priceCurrency":"AUD","lowPrice":"99","offerCount":"3"}}
 ]}
 </script>
@@ -730,10 +730,11 @@
     <div class="faq">
       <details>
         <summary>Which practice management systems does it work with?</summary>
-        <p>Cliniko, Practice Hub, Nookal and Halaxy. Cliniko is the one running live in a
+        <p>Cliniko, Practice Hub, PracSuite, Nookal and Halaxy. Cliniko is the one running live in a
            two-site practice today. Practice Hub is connected and verified against a real clinic's account. I've read their data and confirmed it carries everything the
-           dashboard needs. Nookal and Halaxy are built against their published documentation,
-           and I'd check them against your own account before you committed to anything.</p>
+           dashboard needs. PracSuite, Nookal and Halaxy are built against their published documentation
+           (PracSuite's also checked against their own test environment), and I'd check them against
+           your own account before you committed to anything.</p>
         <p>One thing worth knowing up front if you're on Halaxy: they charge for API access
            as an add-on on their side, around $33 a month. I'd rather you heard that from me
            now than found it on an invoice.</p>
@@ -954,6 +955,8 @@
       <option value="Halaxy" >Halaxy</option>
       
       <option value="Practice Hub" >Practice Hub</option>
+      
+      <option value="PracSuite" >PracSuite</option>
       
       <option value="Front Desk" >Front Desk</option>
       
