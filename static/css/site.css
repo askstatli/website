@@ -1055,7 +1055,7 @@ main:has(> .hero-green) > section:nth-of-type(odd):not(.hero) {
   position: relative;
   background: var(--surface-2);
   border-block: 1px solid var(--rule);
-  padding-block: 1.15rem;
+  padding-block: .5rem;
 }
 .int-row { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.6rem); }
 .int-label {
