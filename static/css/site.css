@@ -1493,15 +1493,6 @@ main:has(> .hero-green) > section:nth-of-type(odd):not(.hero) .data-panel { back
 /* ── Footer ── */
 .foot-cta { font-weight: 600; color: var(--accent) !important; }
 
-/* The trust line, inside the grey integrations band under the moving names.
-   The band's padding is trimmed by what the line adds, so it stays the height
-   it was with the names alone. */
-.integrations:has(.int-trust) { padding-block: .7rem .55rem; }
-.int-trust {
-  margin-top: .3rem; text-align: center;
-  font-size: .86rem; line-height: 1.3; color: var(--ink-2);
-}
-
 /* The founder block closes the hero: the same space above and below it, both
    inside the green (a bottom margin escaped the section and left a white gap). */
 .hero { padding-bottom: clamp(2rem, 4vw, 2.8rem); }
