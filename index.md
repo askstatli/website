@@ -25,8 +25,8 @@ Statli has no public API or self-serve signup. To start, the clinic owner books 
 
 ## Pricing (AUD, excluding GST)
 
-- Solo, 1 chiropractor: $99 per month, $399 one-off setup
-- Practice, 2-4 chiropractors: $149 per month, $499 one-off setup
+- Solo, 1 chiropractor: $99 per month, $299 one-off setup
+- Practice, 2-4 chiropractors: $149 per month, $399 one-off setup
 - Group, 5+ chiropractors: quoted
 
 ## Pages
