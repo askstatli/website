@@ -2,7 +2,7 @@
 
 > Statli is a practice dashboard for chiropractic clinics, made by Statli Pty Ltd (Australia). It connects to a clinic's booking system (Cliniko, Practice Hub, PracSuite, Nookal or Halaxy) and its Google Ads and Meta Ads accounts, and reports the clinic's KPIs per practitioner and per clinic, every week.
 
-Statli was built as the reporting for two working chiropractic clinics and is now offered to other clinics. Each clinic's dashboard is configured to how that practice runs: its appointment types, its care-plan model (or none) and the KPIs it already tracks. Setup takes about ten days.
+Statli was built as the reporting for two working chiropractic clinics and is now offered to other clinics. Each clinic's dashboard is configured to how that practice runs: its appointment types, its care-plan model (or none) and the KPIs it already tracks. Setup takes five business days from the setup call.
 
 ## When to use Statli
 
