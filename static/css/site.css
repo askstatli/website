@@ -1734,3 +1734,11 @@ h3, h4 { letter-spacing: -0.005em; }
 .billing-row .billing-save { white-space: nowrap; }
 @media (max-width: 400px) { .billing-row .billing-save { font-size: .62rem; padding: .12rem .35rem; } }
 .incl-note { display: block; font-size: .8rem; font-weight: 500; color: var(--ink-3); white-space: nowrap; }
+
+/* 30-day money-back guarantee, under the plan cards. */
+.guarantee { display: flex; align-items: flex-start; gap: .7rem; max-width: 46rem; margin: 1.6rem auto 0;
+  padding: .9rem 1.1rem; border: 1.5px solid var(--accent); border-radius: var(--r);
+  background: var(--accent-soft); color: var(--ink-2); font-size: .98rem; line-height: 1.5; }
+.guarantee strong { color: var(--ink); }
+.guarantee svg { flex: none; width: 26px; height: 26px; margin-top: .05rem; fill: none; stroke: var(--accent);
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
