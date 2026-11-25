@@ -1733,3 +1733,4 @@ h3, h4 { letter-spacing: -0.005em; }
 .plans.is-annual .plan-setup .setup-free-note { display: inline; }
 .billing-row .billing-save { white-space: nowrap; }
 @media (max-width: 400px) { .billing-row .billing-save { font-size: .62rem; padding: .12rem .35rem; } }
+.incl-note { display: block; font-size: .8rem; font-weight: 500; color: var(--ink-3); white-space: nowrap; }
