@@ -1689,3 +1689,47 @@ h3, h4 { letter-spacing: -0.005em; }
 @media (min-width: 1200px) {
   .book-grid:has(.cal-block) { grid-template-columns: minmax(0, 1fr) 780px; gap: 2.4rem; }
 }
+
+/* A marker's dropdown panel (John's "things to focus on"): drops open over
+   the screenshot from the bar it belongs to, above the dimming, below the
+   markers and the bubble. Other markers step aside while it's open. */
+.drop-panel {
+  position: absolute; z-index: 1; height: auto; pointer-events: none;
+  border-radius: 10px; box-shadow: 0 0 0 2px var(--warn), 0 18px 40px -12px rgba(0, 0, 0, .45);
+  transform-origin: top center; transform: scaleY(.04); opacity: 0;
+  transition: transform .32s var(--ease-out), opacity .18s ease;
+}
+.drop-panel.is-open { transform: none; opacity: 1; }
+.annot.panel-on .pin:not(.is-active) { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .drop-panel { transform: none; transition: opacity .2s ease; } }
+
+/* "On their phone, updated every hour" under John's intro. */
+.story-live { display: flex; align-items: flex-start; gap: .55rem; margin-top: .7rem;
+  font-size: .95rem; color: var(--ink-2); }
+.live-dot { width: 9px; height: 9px; margin-top: .5em; border-radius: 50%; background: var(--good); flex: none;
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--good) 45%, transparent); animation: live-pulse 2s ease-out infinite; }
+@keyframes live-pulse { to { box-shadow: 0 0 0 8px transparent; } }
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
+
+/* Monthly / annual, made hard to miss (Josiah, 2026-11-25: scrolling past, he
+   didn't see it): a question beside it, a bigger switch, and the chosen side
+   filled in the accent colour. */
+.billing-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: .6rem 1rem; margin: 0 0 1.8rem; }
+.billing-ask { margin: 0; font-weight: 600; color: var(--ink); }
+.billing-row .billing { margin: 0; padding: 4px; background: var(--surface);
+  border: 1.5px solid var(--accent); box-shadow: 0 6px 18px -10px rgba(17, 120, 95, .55); }
+.billing-row .billing-opt { font-size: .98rem; font-weight: 600; padding: .6rem 1.25rem; color: var(--ink-2); }
+.billing-row .billing-thumb { top: 4px; bottom: 4px; background: var(--accent); box-shadow: none; }
+.billing-row .billing-opt.is-on { color: var(--accent-ink); }
+.billing-row .billing-save { font-size: .7rem; background: var(--accent-soft); color: var(--accent); }
+.billing-row .billing-opt.is-on .billing-save { background: rgba(255, 255, 255, .2); color: #fff; }
+@media (max-width: 480px) { .billing-row .billing-opt { padding: .55rem .9rem; font-size: .92rem; } }
+
+/* Setup fee: in full on monthly; struck through to $0 on annual. */
+.plan-setup .setup-free, .plan-setup .setup-free-note { display: none; }
+.plans.is-annual .plan-setup .setup-was { text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.plans.is-annual .plan-setup .setup-free { display: inline; font-weight: 700; color: var(--accent); }
+.plans.is-annual .plan-setup .setup-free-note { display: inline; }
+.billing-row .billing-save { white-space: nowrap; }
+@media (max-width: 400px) { .billing-row .billing-save { font-size: .62rem; padding: .12rem .35rem; } }
