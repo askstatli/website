@@ -1777,3 +1777,10 @@ h3, h4 { letter-spacing: -0.005em; }
   .quotes-track { animation: none; padding-inline: 1.1rem; }
   .quotes-set[aria-hidden="true"] { display: none; }
 }
+
+/* Risk reversal under the hero buttons. */
+.hero-trust { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem 1.1rem;
+  margin: .9rem 0 0; font-size: .9rem; font-weight: 500; color: var(--ink-2); }
+.hero-trust span { display: inline-flex; align-items: center; gap: .4rem; }
+.hero-trust span::before { content: ""; width: 14px; height: 14px; flex: none;
+  background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2311785f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E"); }
