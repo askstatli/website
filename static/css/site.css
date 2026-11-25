@@ -1742,3 +1742,16 @@ h3, h4 { letter-spacing: -0.005em; }
 .guarantee strong { color: var(--ink); }
 .guarantee svg { flex: none; width: 26px; height: 26px; margin-top: .05rem; fill: none; stroke: var(--accent);
   stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Before/after figures from Josiah's own clinics, under his quote. */
+.proof { max-width: 52rem; margin: clamp(1.6rem, 3vw, 2.2rem) auto 0; text-align: center; }
+.proof-lead { font-size: .95rem; color: var(--ink-2); margin: 0 0 .9rem; }
+.proof-stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.proof-stats li { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r);
+  padding: 1rem .8rem; display: grid; gap: .25rem; box-shadow: var(--shadow); }
+.proof-num { font-family: var(--heading); font-weight: 700; font-size: clamp(1.45rem, 3vw, 2rem);
+  color: var(--accent); letter-spacing: -.01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.proof-arrow { color: var(--ink-3); font-weight: 500; }
+.proof-what { font-size: .9rem; color: var(--ink-2); }
+.proof-note { margin: .7rem 0 0; font-size: .78rem; color: var(--ink-3); }
+@media (max-width: 560px) { .proof-stats { grid-template-columns: 1fr; } }
