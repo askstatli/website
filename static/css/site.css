@@ -1068,8 +1068,15 @@ main:has(> .hero-green) > section:nth-of-type(odd):not(.hero) {
   -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
-.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite;
+                 will-change: transform; transform: translate3d(0,0,0); backface-visibility: hidden; }
+/* Pause on hover only with a real mouse: on phones a tap leaves a sticky
+   :hover that froze the band, and iOS then dropped the masked layer. */
+@media (hover: hover) and (pointer: fine) {
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+}
+.marquee { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; }
+@media (hover: none) { .marquee { pointer-events: none; } }
 .marquee-set { display: flex; align-items: center; margin: 0; padding: 0; list-style: none; }
 .marquee-set li {
   display: flex; align-items: center; white-space: nowrap;
@@ -1094,7 +1101,7 @@ main:has(> .hero-green) > section:nth-of-type(odd):not(.hero) {
   content: ""; width: 7px; height: 7px; border-radius: 50%;
   background: var(--brand-dot); margin-inline: clamp(1.6rem, 3.4vw, 2.8rem);
 }
-@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes marquee { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
 
 /* Still, and each name once, for anyone who has asked for less motion. */
 @media (prefers-reduced-motion: reduce) {
