@@ -1131,6 +1131,17 @@ main:has(> .hero-green) > section:nth-of-type(odd):not(.hero) {
   .marquee-set li.logo-practicehub img { height: 24px; }
   .marquee-set li.logo-meta img { height: 22px; }
   .marquee-set li.logo-nookal img { height: 18px; padding: 7px 11px; }
+  /* iOS Safari leaves gaps in a very wide moving strip, worse under a CSS
+     mask. On phones: one copy of the names per half (still wider than the
+     screen), no will-change, and the edge fade drawn as overlays instead. */
+  .marquee-set .rep { display: none; }
+  .marquee { position: relative; -webkit-mask-image: none; mask-image: none; }
+  .marquee::before, .marquee::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 28px; z-index: 1;
+  }
+  .marquee::before { left: 0;  background: linear-gradient(to right, var(--surface-2), transparent); }
+  .marquee::after  { right: 0; background: linear-gradient(to left,  var(--surface-2), transparent); }
+  .marquee-track { will-change: auto; animation-duration: 16s; }
 }
 
 /* ── Who it's for ─────────────────────────────────────────────────────────── */
